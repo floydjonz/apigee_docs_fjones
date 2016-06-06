@@ -18,7 +18,7 @@ basePath: /
 schemes:
   - https
 paths:
-  /v1/organizations/floydapiproject/apis:
+  /v1/organizations/{org-name}/apis:
     get:
       summary: get a list of API proxies
       operationId: getProxies
