@@ -1,0 +1,43 @@
+swagger: '2.0'
+info:
+  description: >-
+    Open API Spec of Apigee APIs. You can find more about Open API Spec here
+    (https://openapis.org/)
+  version: 1.0.0
+  title: Open API Apigee API Program
+  termsOfService: 'https://api.enterprise.apigee.com/terms-of-service'
+  contact:
+    name: API Team
+    url: 'https://api.enterprise.apigee.com/contact'
+    email: apiteam@apigee.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: api.enterprise.apigee.com
+basePath: /
+schemes:
+  - https
+paths:
+  /v1/organizations/floydapiproject/apis:
+    get:
+      summary: get a list of API proxies
+      operationId: getProxies
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            description: ''
+            minItems: 1
+            uniqueItems: true
+            items:
+              type: object
+              properties: {}
+      parameters:
+        - name: Authorization
+          in: header
+          description: Apigee admin creds
+          required: true
+          type: string
